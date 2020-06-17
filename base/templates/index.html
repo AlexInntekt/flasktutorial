@@ -1,13 +1,8 @@
-<html>
+{% extends "base.html" %}
 
-    <head>
-        <title>{{ title }} - Pagina de index</title>
-    </head>
-    <body>
-        <h1>Hello, {{user}}!</h1>
-        <p> This is a paragraph from the template :))) </p>
-    </body>
-
-
-
-</html>
+{% block content %}
+    <h1>Hi, user!</h1>
+    {% for object in objects %}
+    <div><p>{{ object.author.username }} says: <b>{{ post.body }}</b></p></div>
+    {% endfor %}
+{% endblock %}
